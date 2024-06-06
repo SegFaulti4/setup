@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eux
 
-usermod -aG input popovms
+sudo usermod -aG input popovms
 
 sudo apt update
 sudo apt install -y \
@@ -36,4 +36,5 @@ sudo mkdir -p /etc/greetd
 sudo cp -f ./greetd.toml /etc/greetd/config.toml
 
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply SegFaulti4
+rm -rf ./bin
 
