@@ -4,15 +4,15 @@ set -eux
 usermod -aG input popovms
 
 sudo apt update
-sudo apt install \
-    tree diff git ssh curl wget \
+sudo apt install -y \
+    tree diffutils git ssh curl wget \
     build-essential net-tools fontconfig \
     python3-dev python3-venv pipx \
     wayland-protocols xwayland xdg-desktop-portal-wlr wl-clipboard \
     seatd acpid thermald greetd libxkbcommon-tools \
     sway swaybg swayidle swaylock \
     chromium mpv gedit foot waybar dunst fuzzel \
-    breeze-gtk papirus-icon-theme xfce4-settings \
+    breeze-gtk-theme papirus-icon-theme xfce4-settings \
     blueman pavucontrol gammastep wob pamixer \
     network-manager network-manager-gnome network-manager-openvpn \
     thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman \
