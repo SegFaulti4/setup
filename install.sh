@@ -35,6 +35,4 @@ sudo chmod 0755 /usr/local/bin/start-sway
 sudo mkdir -p /etc/greetd
 sudo cp -f ./greetd.toml /etc/greetd/config.toml
 
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply SegFaulti4
-rm -rf ./bin
-
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin init --apply SegFaulti4
