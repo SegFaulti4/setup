@@ -4,6 +4,7 @@ set -eux
 sudo usermod -aG input popovms
 
 sudo apt update
+sudo apt upgrade
 sudo apt install -y \
     tree diffutils git ssh curl wget \
     build-essential net-tools fontconfig \
