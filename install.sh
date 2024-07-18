@@ -17,7 +17,8 @@ sudo apt install -y \
     blueman pavucontrol gammastep wob pamixer \
     network-manager network-manager-gnome network-manager-openvpn \
     thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman \
-    qemu-system libvirt-daemon-system virt-manager
+    qemu-system libvirt-daemon-system virt-manager \
+    grim wf-recorder slurp vlc viewnior
 
 pipx install poetry
 pipx install termdown
