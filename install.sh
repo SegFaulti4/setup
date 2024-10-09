@@ -23,12 +23,11 @@ sudo apt install -y \
 pipx install poetry
 pipx install termdown
 
-curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
 tar --one-top-level -xJf ./JetBrainsMono.tar.xz
 sudo mkdir -p /usr/share/fonts
 sudo cp ./JetBrainsMono/*.ttf /usr/share/fonts
 sudo fc-cache -f -v /usr/share/fonts
-rm -rf JetBrainsMono.tar.xz JetBrainsMono
+rm -rf JetBrainsMono
 
 sudo mkdir -p /usr/local/bin
 sudo cp -f ./start-sway /usr/local/bin/start-sway
