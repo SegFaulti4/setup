@@ -24,9 +24,9 @@ sudo apt install -y \
     grim wf-recorder slurp vlc viewnior
 sudo install -m 0755 -d /etc/apt/keyrings
 
-
 # install python scripts
 pipx install termdown
+pipx install python-openstackclient==6.3.0
 
 # install fonts
 tar --one-top-level -xJf ./JetBrainsMono.tar.xz
