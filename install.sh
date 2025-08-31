@@ -21,12 +21,9 @@ sudo apt install -y \
     network-manager network-manager-gnome network-manager-openvpn \
     thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman \
     qemu-system libvirt-daemon-system virt-manager \
-    grim wf-recorder slurp vlc viewnior
+    grim wf-recorder slurp vlc viewnior \
+    keepassxc
 sudo install -m 0755 -d /etc/apt/keyrings
-
-# install python scripts
-pipx install termdown
-pipx install python-openstackclient==6.3.0
 
 # install fonts
 tar --one-top-level -xJf ./JetBrainsMono.tar.xz
@@ -60,8 +57,8 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # install docker
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # docker post-install steps
 sudo groupadd -f docker
@@ -77,5 +74,5 @@ echo "deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net
 
 # install openvpn3
 sudo apt update
-sudo apt install openvpn3
+sudo apt install -y openvpn3-client
 
