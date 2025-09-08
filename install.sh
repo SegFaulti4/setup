@@ -14,7 +14,7 @@ sudo apt install -y \
     chromium gedit mpv viewnior blueman keepassxc \
     network-manager network-manager-gnome network-manager-openvpn \
     thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman \
-    papirus-icon-theme fontconfig libglib2.0-bin \
+    papirus-icon-theme fontconfig libglib2.0-bin fonts-noto-color-emoji \
     qt6-gtk-platformtheme qt5-gtk-platformtheme \
     net-tools ca-certificates curl wget apt-transport-https \
     build-essential git ssh tree diffutils \
