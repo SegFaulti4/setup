@@ -2,18 +2,19 @@
 set -eux
 
 # reclone setup
-git clone git@github.com:SegFaulti4/setup.git && \
 mkdir -p $HOME/clones && \
 rm -rf $HOME/clones/setup && \
-mv setup $HOME/clones/setup || true
+git clone git@github.com:SegFaulti4/setup.git $HOME/clones/setup || true
 
 # reclone dotfiles
-git clone git@github.com:SegFaulti4/dotfiles.git && \
+mkdir -p $HOME/.local/share
 rm -rf $HOME/.local/share/chezmoi && \
-mv dotfiles $HOME/.local/share/chezmoi || true
+git clone git@github.com:SegFaulti4/dotfiles.git $HOME/.local/share/chezmoi || true
 
 # install qmk
 git clone git@github.com:SegFaulti4/qmk_firmware.git $HOME/qmk_firmware && \
+git --git-dir=$HOME/qmk_firmware/.git remote add upstream git@github.com:qmk/qmk_firmware
+sudo cp $HOME/qmk_firmware/util/udev/50-qmk.rules /etc/udev/rules.d/
 qmk setup -y || true
 
 # install messenger
@@ -29,7 +30,8 @@ rm -f chrome.deb || true
 # install IDE
 curl https://download-cdn.jetbrains.com/python/pycharm-2025.2.1.1.tar.gz --output pycharm.tar.gz && \
 sudo tar -C /opt -xzvf pycharm.tar.gz && \
-sudo mv /opt/pycharm-* /opt/pycharm || true
+sudo mv /opt/pycharm-* /opt/pycharm && \
+rm -f pycharm.tar.gz || true
 
 # enable vial support
 sudo usermod -aG input popovms
