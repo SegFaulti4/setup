@@ -44,3 +44,8 @@ curl https://download-cdn.jetbrains.com/python/pycharm-2025.2.1.1.tar.gz --outpu
 sudo tar -C /opt -xzvf pycharm.tar.gz && \
 sudo mv /opt/pycharm-* /opt/pycharm && \
 rm -f pycharm.tar.gz || true
+
+# install office
+curl https://www.softmaker.net/down/softmaker-freeoffice-2024_1228-01_amd64.deb --output office.deb && \
+sudo apt install -y ./office.deb
+rm -f office.deb || true
