@@ -23,7 +23,7 @@ rm -f tsetup.tar.xz || true
 
 # install browser
 curl https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb --output chrome.deb && \
-sudo apt install ./chrome.deb && \
+sudo apt install -y ./chrome.deb && \
 rm -f chrome.deb || true
 
 # install IDE
