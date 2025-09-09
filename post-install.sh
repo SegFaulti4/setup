@@ -1,6 +1,18 @@
 #!/bin/bash
 set -eux
 
+# enable vial support
+export USER_GID=`id -g`; sudo --preserve-env=USER_GID sh -c 'echo "KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", ATTRS{serial}==\"*vial:f64c2b3c*\", MODE=\"0660\", GROUP=\"$USER_GID\", TAG+=\"uaccess\", TAG+=\"udev-acl\"" > /etc/udev/rules.d/99-vial.rules && udevadm control --reload && udevadm trigger'
+
+# set correct rights for secret files
+chmod 0644 $HOME/secrets/*.*
+chmod 0644 $HOME/secrets/*/*
+chmod 0400 $HOME/secrets/*/id_*
+
+chmod 0644 $HOME/.ssh/*
+chmod 0400 $HOME/.ssh/id_*
+chmod 0644 $HOME/.ssh/id_*.pub
+
 # reclone setup
 mkdir -p $HOME/clones && \
 rm -rf $HOME/clones/setup && \
@@ -32,7 +44,3 @@ curl https://download-cdn.jetbrains.com/python/pycharm-2025.2.1.1.tar.gz --outpu
 sudo tar -C /opt -xzvf pycharm.tar.gz && \
 sudo mv /opt/pycharm-* /opt/pycharm && \
 rm -f pycharm.tar.gz || true
-
-# enable vial support
-sudo usermod -aG input popovms
-export USER_GID=`id -g`; sudo --preserve-env=USER_GID sh -c 'echo "KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", ATTRS{serial}==\"*vial:f64c2b3c*\", MODE=\"0660\", GROUP=\"$USER_GID\", TAG+=\"uaccess\", TAG+=\"udev-acl\"" > /etc/udev/rules.d/99-vial.rules && udevadm control --reload && udevadm trigger'
