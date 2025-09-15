@@ -3,7 +3,7 @@ set -eux
 
 # install packages
 sudo apt update
-sudo apt upgrade
+sudo apt -y upgrade
 sudo apt install -y \
     wayland-protocols xwayland xdg-desktop-portal-wlr libxkbcommon-tools \
     seatd acpid thermald greetd \
