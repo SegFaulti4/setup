@@ -10,7 +10,7 @@ sudo apt install -y \
     sway swaybg swayidle swaylock \
     foot waybar dunst fuzzel micro \
     pavucontrol gammastep wob pamixer \
-    wl-clipboard grim wf-recorder slurp \
+    wl-clipboard grim wf-recorder slurp wayvnc \
     chromium gedit mpv viewnior blueman keepassxc \
     thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman \
     papirus-icon-theme fontconfig libglib2.0-bin fonts-noto-color-emoji \
