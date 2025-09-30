@@ -9,7 +9,7 @@ sudo apt install -y \
     seatd acpid thermald greetd \
     sway swaybg swayidle swaylock \
     foot waybar dunst fuzzel micro \
-    pavucontrol gammastep wob pamixer \
+    pavucontrol gammastep wob pamixer brightnessctl \
     wl-clipboard grim wf-recorder slurp wayvnc \
     chromium gedit mpv viewnior blueman keepassxc \
     thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman \
