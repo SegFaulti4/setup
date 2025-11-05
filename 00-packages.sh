@@ -18,6 +18,10 @@ sudo apt install -y \
     net-tools ca-certificates curl wget apt-transport-https \
     build-essential git ssh tree diffutils \
     ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide imagemagick \
+    cups cups-client cups-bsd system-config-printer \
     qmk python3-dev python3-venv pipx
 
 sudo install -m 0755 -d /etc/apt/keyrings
+
+# add user to groups
+sudo usermod -aG lpadmin popovms
