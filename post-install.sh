@@ -40,7 +40,7 @@ sudo apt install -y ./chrome.deb && \
 rm -f chrome.deb || true
 
 # install IDE
-curl https://download-cdn.jetbrains.com/python/pycharm-2025.2.1.1.tar.gz --output pycharm.tar.gz && \
+curl https://download-cdn.jetbrains.com/python/pycharm-professional-2024.3.6.tar.gz --output pycharm.tar.gz && \
 sudo tar -C /opt -xzvf pycharm.tar.gz && \
 sudo mv /opt/pycharm-* /opt/pycharm && \
 rm -f pycharm.tar.gz || true
