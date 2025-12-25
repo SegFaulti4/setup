@@ -16,7 +16,7 @@ sudo apt install -y \
     papirus-icon-theme fontconfig libglib2.0-bin fonts-noto-color-emoji \
     qt6-gtk-platformtheme qt5-gtk-platformtheme \
     net-tools ca-certificates curl wget apt-transport-https \
-    build-essential git ssh tree diffutils btm \
+    build-essential git ssh tree diffutils btm gvfs-backends \
     ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide imagemagick \
     cups cups-client cups-bsd system-config-printer simple-scan \
     qmk python3-dev python3-venv pipx
