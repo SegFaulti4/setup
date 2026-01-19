@@ -11,7 +11,7 @@ sudo apt install -y \
     foot waybar dunst fuzzel micro \
     pavucontrol gammastep wob pamixer brightnessctl \
     wl-clipboard clipman grim wf-recorder slurp wayvnc wev \
-    chromium gedit mpv viewnior blueman keepassxc \
+    chromium gedit mpv viewnior blueman keepassxc speech-dispatcher \
     thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman \
     papirus-icon-theme fontconfig libglib2.0-bin fonts-noto-color-emoji \
     qt6-gtk-platformtheme qt5-gtk-platformtheme \
