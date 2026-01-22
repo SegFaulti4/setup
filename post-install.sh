@@ -30,15 +30,30 @@ sudo cp $HOME/qmk_firmware/util/udev/50-qmk.rules /etc/udev/rules.d/
 qmk setup -y || true
 git --git-dir=$HOME/qmk_firmware/.git checkout current
 
+# install browser
+sudo install -d -m 0755 /etc/apt/keyrings
+wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
+
+cat <<EOF | sudo tee /etc/apt/sources.list.d/mozilla.sources
+Types: deb
+URIs: https://packages.mozilla.org/apt
+Suites: mozilla
+Components: main
+Signed-By: /etc/apt/keyrings/packages.mozilla.org.asc
+EOF
+
+echo '
+Package: *
+Pin: origin packages.mozilla.org
+Pin-Priority: 1000
+' | sudo tee /etc/apt/preferences.d/mozilla
+
+sudo apt update && sudo apt install firefox firefox-l10n-ru
+
 # install messenger
 curl https://td.telegram.org/tlinux/tsetup.6.1.3.tar.xz --output tsetup.tar.xz && \
 sudo tar -C /opt -xJvf tsetup.tar.xz && \
 rm -f tsetup.tar.xz || true
-
-# install browser
-curl https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb --output chrome.deb && \
-sudo apt install -y ./chrome.deb && \
-rm -f chrome.deb || true
 
 # install IDE
 curl https://download-cdn.jetbrains.com/python/pycharm-professional-2024.3.6.tar.gz --output pycharm.tar.gz && \
@@ -47,6 +62,4 @@ sudo mv /opt/pycharm-* /opt/pycharm && \
 rm -f pycharm.tar.gz || true
 
 # install office
-curl https://www.softmaker.net/down/softmaker-freeoffice-2024_1228-01_amd64.deb --output office.deb && \
-sudo apt install -y ./office.deb
-rm -f office.deb || true
+flatpak install -y flathub org.onlyoffice.desktopeditors
