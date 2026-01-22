@@ -22,7 +22,7 @@ sudo apt install -y \
     qmk python3-dev python3-venv pipx
 
 sudo install -m 0755 -d /etc/apt/keyrings
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # add user to groups
 sudo usermod -aG lpadmin popovms
