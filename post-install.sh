@@ -63,3 +63,6 @@ rm -f pycharm.tar.gz || true
 
 # install office
 flatpak install -y flathub org.onlyoffice.desktopeditors
+
+# install micro plugins
+micro -plugin install lsp
