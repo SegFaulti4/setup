@@ -55,14 +55,19 @@ curl https://td.telegram.org/tlinux/tsetup.6.1.3.tar.xz --output tsetup.tar.xz &
 sudo tar -C /opt -xJvf tsetup.tar.xz && \
 rm -f tsetup.tar.xz || true
 
-# install IDE
+# install IDEs
 curl https://download-cdn.jetbrains.com/python/pycharm-professional-2024.3.6.tar.gz --output pycharm.tar.gz && \
 sudo tar -C /opt -xzvf pycharm.tar.gz && \
 sudo mv /opt/pycharm-* /opt/pycharm && \
 rm -f pycharm.tar.gz || true
 
+curl https://download-cdn.jetbrains.com/go/goland-2024.3.6.tar.gz --output goland.tar.gz && \
+sudo tar -C /opt -xzvf goland.tar.gz && \
+sudo mv /opt/GoLand-* /opt/goland && \
+rm -f goland.tar.gz || true
+
 # install office
-flatpak install -y flathub org.onlyoffice.desktopeditors
+# flatpak install -y flathub org.onlyoffice.desktopeditors
 
 # install micro plugins
 micro -plugin install lsp
