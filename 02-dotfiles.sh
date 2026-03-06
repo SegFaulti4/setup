@@ -10,6 +10,3 @@ echo "include hosts/$(hostname).conf" | tee -a .config/sway/.local
 
 # install fonts
 sudo fc-cache -f -v $HOME/.local/share/fonts
-
-# enable waybar keyboard module
-sudo usermod -aG input popovms
