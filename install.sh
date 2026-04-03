@@ -7,3 +7,4 @@ set -eux
 ./3-rights.sh
 ./4-docker.sh
 ./5-network.sh
+./6-razer.sh

@@ -12,15 +12,10 @@ echo \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-# install docker
+# install docker specific version
 sudo apt update
-# specific version
 VERSION_STRING=5:28.5.2-1~debian.13~trixie
 sudo apt install -y docker-ce=$VERSION_STRING docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-# docker post-install steps
-sudo groupadd -f docker
-MY_USER=$USER && sudo usermod -aG docker $MY_USER
-
-# delete docker repo from apt sources (prevent package upgrades)
+# prevent docker packages upgrades
 sudo rm -f /etc/apt/sources.list.d/docker.list
