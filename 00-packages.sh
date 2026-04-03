@@ -11,7 +11,7 @@ sudo apt install -y \
     foot waybar dunst fuzzel micro \
     pavucontrol gammastep wob pamixer brightnessctl \
     wl-clipboard clipman grim wf-recorder slurp wayvnc wev \
-    chromium gedit mpv viewnior blueman keepassxc speech-dispatcher flatpak \
+    chromium gedit mpv viewnior blueman keepassxc speech-dispatcher \
     thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman \
     papirus-icon-theme fontconfig libglib2.0-bin fonts-noto-color-emoji \
     qt6-gtk-platformtheme qt5-gtk-platformtheme \
@@ -21,11 +21,3 @@ sudo apt install -y \
     firmware-realtek firmware-linux guvcview v4l2loopback-dkms \
     cups cups-client cups-bsd system-config-printer simple-scan \
     qmk python3-dev python3-venv python3-pylsp pipx golang
-
-sudo install -m 0755 -d /etc/apt/keyrings
-sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
-# add user to groups
-sudo usermod -aG lpadmin popovms
-sudo usermod -aG video popovms
-sudo usermod -aG input popovms
