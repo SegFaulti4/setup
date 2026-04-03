@@ -1,8 +1,8 @@
 #!/bin/bash
 set -eux
 
-./post-00-secrets.sh
-./post-01-reclone.sh
-./post-02-qmk.sh
-./post-03-browsing.sh
-./post-04-ide.sh
+./post-0-secrets.sh
+./post-1-reclone.sh
+./post-2-qmk.sh
+./post-3-browsing.sh
+./post-4-ide.sh
