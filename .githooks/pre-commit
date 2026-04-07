@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+
+# Run the sorter
+scripts/sort_packages.sh
+
+# Add file back if modified
+git add 0-apt-packages.txt
